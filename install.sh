@@ -2,7 +2,7 @@
 
 set -e
 
-REPO_URL="https://github.com/achyutem/save-your-eyes.git"
+REPO_URL="https://github.com/achyutem/eyeRest.git"
 INSTALL_DIR="$HOME/.local/share/eyeRest"
 DESKTOP_FILE="$HOME/.local/share/applications/eyeRest.desktop"
 
