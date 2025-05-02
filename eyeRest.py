@@ -5,7 +5,7 @@ import os
 import signal
 
 WORK_DURATION = 20 * 60
-BREAK_DURATION = 20
+BREAK_DURATION = 60
 SKIP_PHRASE = "i dont care"
 
 def show_break_screen():
