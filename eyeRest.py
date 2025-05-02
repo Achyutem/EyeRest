@@ -5,9 +5,8 @@ import os
 import signal
 
 WORK_DURATION = 20 * 60
-BREAK_DURATION = 60
-SKIP_PHRASE = "I dont care about my eyes"
-
+BREAK_DURATION = 20
+SKIP_PHRASE = "i dont care"
 
 def show_break_screen():
     user_input = []
@@ -15,7 +14,8 @@ def show_break_screen():
     def on_key(event):
         if event.char and event.char.isprintable():
             user_input.append(event.char)
-            if "".join(user_input[-len(SKIP_PHRASE) :]) == SKIP_PHRASE:
+            current_input = "".join(user_input[-len(SKIP_PHRASE):])
+            if current_input.lower() == SKIP_PHRASE.lower():
                 screen.destroy()
 
     screen = tk.Tk()
@@ -26,26 +26,37 @@ def show_break_screen():
     screen.bind("<Escape>", lambda e: None)
     screen.bind("<Key>", on_key)
 
-    label = tk.Label(
-        screen,
+    # Create a centered frame
+    center_frame = tk.Frame(screen, bg="black")
+    center_frame.place(relx=0.5, rely=0.5, anchor="center")
+
+    # Large headline
+    label_main = tk.Label(
+        center_frame,
         text="Stare somewhere far.",
         fg="white",
         bg="black",
-        font=("Helvetica", 48),
+        font=("Helvetica", 48, "bold")
     )
-    label.pack(expand=True)
+    label_main.pack(pady=(0, 20))  # Space between lines
 
-    # Auto-close after BREAK_DURATION
+    # Smaller subtitle
+    label_sub = tk.Label(
+        center_frame,
+        text="Give rest to your eyes.",
+        fg="white",
+        bg="black",
+        font=("Helvetica", 24)
+    )
+    label_sub.pack()
+
     screen.after(BREAK_DURATION * 1000, screen.destroy)
-
     screen.mainloop()
-
 
 def timer_loop():
     while True:
         time.sleep(WORK_DURATION)
         show_break_screen()
-
 
 if __name__ == "__main__":
     try:
