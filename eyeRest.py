@@ -14,7 +14,7 @@ SKIP_PHRASE = "i dont care"
 class EyeRest:
     def __init__(self):
         self.root = tk.Tk()
-        # self.root.withdraw()  # Hide the main window (optional)
+        self.root.withdraw()  # Hide the main window (optional)
         self.queue = Queue()
 
     def show_break_screen(self):
