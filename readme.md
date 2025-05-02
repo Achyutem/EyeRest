@@ -81,13 +81,13 @@ Fully offline
 
 Minimal resource usage
 
-Default: 20 minutes work → 2 minutes break
+Default: 20 minutes work → 1 minutes break
 
 You can adjust timing in eyeRest.py:
 
     ```
-    WORK_DURATION = 1200  # 20 minutes
-    BREAK_DURATION = 120  # 2 minutes
+    WORK_DURATION = 20 * 60  # 20 minutes
+    BREAK_DURATION = 60  # 1 minutes
     ```
 
 Stay healthy 👁️ — give your eyes the break they deserve!
