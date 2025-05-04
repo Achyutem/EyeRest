@@ -13,7 +13,7 @@ Built with 💙 using Python and Tkinter.
 
 - ✅ **Linux** (Debian, Arch, Fedora)
 - ✅ **macOS** (Homebrew-supported)
-- 🟡 **Windows** – _Manual setup supported; install script coming soon_
+- 🟡 **Windows** – _Manual setup supported, install script coming soon_
 
 ---
 
@@ -77,19 +77,32 @@ While the break screen is active, type:
 `i dont care`
 This will close the break screen immediately. Input is hidden for simplicity.
 
-### 📌 Notes
+### ⚙️ Customize Timing
 
-Fully offline
+Default:
 
-Minimal resource usage
+    20 minutes work
 
-Default: 20 minutes work → 1 minutes break
+    1 minute break
 
-You can adjust timing in eyeRest.py:
+To change this, open eyeRest.py and edit:
 
-    ```
-    WORK_DURATION = 20 * 60  # 20 minutes
-    BREAK_DURATION = 60  # 1 minutes
-    ```
+```
+WORK_DURATION = 20 * 60  # 20 minutes
+BREAK_DURATION = 60      # 1 minute
+```
 
-Stay healthy 👁️ — give your eyes the break they deserve!
+🧠 Why EyeRest?
+
+- Follows the 20-20-20 rule (every 20 mins, look 20 ft away for 20 secs)
+
+- Helps prevent digital eye strain (CVS)
+
+- Simple, fast, and no network needed
+
+- Easy to modify and extend (just Python)
+
+### ❤️ Stay Healthy
+
+Protect your eyes — they're the only pair you've got.
+EyeRest helps you build better screen habits, one break at a time.
