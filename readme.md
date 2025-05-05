@@ -5,7 +5,9 @@ This small app reminds you to take a short break every 20 minutes by showing a f
 
 Built with 💙 using Python and Tkinter.
 
-![EyeRest](preview.png)
+#### Demo of manual running
+
+![EyeRest](video.gif)
 
 ---
 
