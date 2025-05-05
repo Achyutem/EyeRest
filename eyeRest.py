@@ -23,7 +23,7 @@ class EyeRest:
         def on_key(event):
             if event.char and event.char.isprintable():
                 user_input.append(event.char)
-                current_input = "".join(user_input[-len(SKIP_PHRASE):])
+                current_input = "".join(user_input[-len(SKIP_PHRASE) :])
                 if current_input.lower() == SKIP_PHRASE.lower():
                     screen.destroy()
 
@@ -40,7 +40,7 @@ class EyeRest:
             else:
                 screen.destroy()
 
-        # Create a new top-level window for the break screen        
+        # Create a new top-level window for the break screen
         screen = tk.Toplevel(self.root)
         screen.configure(bg="black")
         screen.attributes("-fullscreen", True)
@@ -60,7 +60,7 @@ class EyeRest:
             text="Stare somewhere far.",
             fg="white",
             bg="black",
-            font=("Helvetica", 48, "bold")
+            font=("Helvetica", 48, "bold"),
         )
         label_main.pack(pady=(0, 20))
 
@@ -70,17 +70,12 @@ class EyeRest:
             text="Give rest to your eyes.",
             fg="white",
             bg="black",
-            font=("Helvetica", 24)
+            font=("Helvetica", 24),
         )
-        label_sub.pack(pady=(0, 40))\
-        
+        label_sub.pack(pady=(0, 40))
         # Countdown timer label
         countdown_label = tk.Label(
-            center_frame,
-            text="",
-            fg="white",
-            bg="black",
-            font=("Helvetica", 36)
+            center_frame, text="", fg="white", bg="black", font=("Helvetica", 36)
         )
         countdown_label.pack()
 
@@ -114,7 +109,7 @@ class EyeRest:
         Starts the timer thread and the Tkinter event loop.
         """
         timer_thread = threading.Thread(target=self.timer_loop)
-        timer_thread.daemon = True # Automatically exit with the main thread
+        timer_thread.daemon = True  # Automatically exit with the main thread
         timer_thread.start()
 
         self.check_queue()
